@@ -4,9 +4,9 @@
 ## 1.- Introducción
 Para comenzar este seminario hemos instalado DOSBox en Windows 10. Esto es muy sencillo, ya que una vez tenemos el instalador descargado simplemente tenemos que seguir los pasos e instalar DOSBox en la ubicación que queramos.
 
-A continuación, creamos una carpeta en la ubicación que queramos para utilizarla como unidad C: del sistema MS-DOS y en ella introducimos los archivos que queramos incluir en el sistema, en mi caso Borland C, juegos clasicos y la carpeta de archivos de este seminario.
+A continuación, creamos una carpeta en la ubicación que queramos para utilizarla como unidad C: del sistema MS-DOS y en ella introducimos los archivos que queramos incluir en el sistema, en mi caso Borland C, juegos clásicos y la carpeta de archivos de este seminario.
 
-Para que esto surga efecto debemos modificar el archivo de configuración de DOSBox (C:\Users\username\AppData\Local\DOSBox\dosbox-0.74.conf) e introducir al final del mismo:
+Para que esto surja efecto debemos modificar el archivo de configuración de DOSBox (C:\Users\username\AppData\Local\DOSBox\dosbox-0.74.conf) e introducir al final del mismo:
 - mount C E:\Carrera\2020-2021\PDIH\DOSBox -> Montar en la unidad C: el contenido de la carpeta DOSBox.
 - keyb sp -> Configurar el teclado en español.
 - path c:\bc\bin -> Añadir a la variable "path" de inicio el directorio "bin" donde se encuentra el ejecutable BC.EXE.
@@ -14,7 +14,7 @@ Para que esto surga efecto debemos modificar el archivo de configuración de DOS
 Una vez hecho esto, ejecutamos DOSBox y ya podemos comentar a utilizarlo.
 
 ## 2.- Juegos
-Una vez iniciado el sistema MS-DOS ya podemos utilizarlo en su totalidad. En primer lugar, se han probado los dos juegos clasicos proporcionados, LIVINGSTONE y Arcade Volleyball. 
+Una vez iniciado el sistema MS-DOS ya podemos utilizarlo en su totalidad. En primer lugar, se han probado los dos juegos clásicos proporcionados, LIVINGSTONE y Arcade Volleyball. 
 
 El que más he probado y que me ha sorprendido ha sido Arcade Volleyball. Tras configurar los controles e indicar que deseamos jugar contra la máquina, he comenzado la prueba del mismo y rápidamente he podido observar la dificultad del mismo. Esta dificultad es lo que ha hecho que con el objetivo de poder ganar un partido de 5 puntos, haya pasado bastante tiempo jugando para poder conseguirlo. Destaco dos aspectos:
 - Me sorprende que un juego tan "simple" (en comparación con los juegos que tenemos hoy en día) pueda llegar a hacer que pase bastante tiempo jugándolo y creo que esto se debe a la cierta dificultad que hay para poder conseguir puntos ya que la máquina juega bastante bien. Simplemente teniendo ese objetivo de ganarle a la máquina un partido de 5 puntos provoca que lo intentes una y otra vez hasta conseguir esto. También hay que decir que una vez lleguemos a nuestro "objetivo" el juego pierde gran parte del interés y se vuelve repetitivo (también es cierto que la parte de 2 jugadores no la he tocado).
