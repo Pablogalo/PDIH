@@ -20,7 +20,7 @@ El que más he probado y que me ha sorprendido ha sido Arcade Volleyball. Tras c
 - Me sorprende que un juego tan "simple" (en comparación con los juegos que tenemos hoy en día) pueda llegar a hacer que pase bastante tiempo jugándolo y creo que esto se debe a la cierta dificultad que hay para poder conseguir puntos ya que la máquina juega bastante bien. Simplemente teniendo ese objetivo de ganarle a la máquina un partido de 5 puntos provoca que lo intentes una y otra vez hasta conseguir esto. También hay que decir que una vez lleguemos a nuestro "objetivo" el juego pierde gran parte del interés y se vuelve repetitivo (también es cierto que la parte de 2 jugadores no la he tocado).
 - La "IA" del bot. Me parece sorprendente que teniendo en cuenta el año de este juego, el adversario logre jugar tan bien y marcar muchos puntos. En contraposición a esto, también debemos tener en cuenta que al ser un juego "simple" sea más fácil hacer que la máquina juegue de una manera decente, cosa que es mucho más complicada en juegos que tienen muchos más factores a tener en cuenta.
 
-Dejo pendiente probar el juego "DOOM", que por falta de tiempo lo dejaré para otro momento, pero que sin duda tengo ganas de ver como es tras la reacción del mismo de varios compañeros.
+Dejo pendiente probar el juego "DOOM", que por falta de tiempo lo dejaré para otro momento, pero que sin duda tengo ganas de ver como es tras la reacción al mismo de varios compañeros.
 
 ## 3.- Archivos ensamblador
 Teniendo el archivo "hola.asm" y estando en su ubicación dentro de DOSBox, simplemente tenemos que introducir en la consola "c.bat HOLA" para realizar su compilación con los programas TASM y TLINK de Borland C. Para ejecutarlo, simplemente ejecutamos "HOLA.EXE".
