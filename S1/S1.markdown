@@ -27,7 +27,9 @@ Teniendo el archivo "hola.asm" y estando en su ubicación dentro de DOSBox, simp
 
 ### 3.1.- Añadir bucle para mostrar "hola" 7 veces
 Esto se realiza de una manera muy simple. Debemos modificar el archivo "hola.asm" (por facilidad, lo podemos editar directamente en la máquina anfitrión) y añadir las siguientes instrucciones máquina que podemos observar en la imagen: 
+
 ![codigo](https://i.postimg.cc/x17CvGqj/Codigo.png)
 
 Al recompilar y ejecutar de nuevo, podemos ver como muestra la palabra "hola" las 7 veces requeridas: 
+
 ![ejecucion](https://i.postimg.cc/bYFKNm5v/Ejecucion.png)
