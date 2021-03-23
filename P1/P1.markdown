@@ -20,9 +20,11 @@ En esta sección vamos a hablar de las distintas funciones implementadas como pa
 
 Para finalizar esta sección, vamos a comentar lo que realiza la función main de este archivo, utilizada para probar el correcto funcionamiento de las funciones descritas anteriormente. En primer lugar, obtiene el modo de video inicial y lo muestra, cambia a cursor invisible y escribe una 'A' en la posición actual. A continuación cambia a cursor grueso, cambia el color de texto y de fondo y pasa a esperar a que el usuario pulse una tecla para mostrarla por pantalla con dichos colores. El programa cambia a cursor normal, vuelve a poner los colores de texto y fondo iniciales y borra toda la pantalla, para finalmente desplazarse a la posición (15,30) y escribir una 'P' en dicha posición. Este funcionamiento lo podemos ver en las siguientes imagenes:
 
-![Ej1-1](https://i.postimg.cc/SKjY80pL/Ej1-1.png) ###### Primera parte 
-![Ej1-2](https://i.postimg.cc/tgfZNrXK/Ej1-2.png)
+###### Primera parte 
+![Ej1-1](https://i.postimg.cc/SKjY80pL/Ej1-1.png) 
 ###### Segunda parte
+![Ej1-2](https://i.postimg.cc/tgfZNrXK/Ej1-2.png)
+
 
 La única función que no es probada en este ejemplo es setvideomode(), que será utilizada para el segundo ejercicio de ampliación.
 
