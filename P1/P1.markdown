@@ -22,7 +22,7 @@ Para finalizar esta sección, vamos a comentar lo que realiza la función main d
 
 ![Ej1-1](https://i.postimg.cc/SKjY80pL/Ej1-1.png)
 ###### Primera parte 
-![Ej1-2](https://i.postimg.cc/HJwkp98z/Ej1-2.png)
+![Ej1-2](https://i.postimg.cc/tgfZNrXK/Ej1-2.png)
 ###### Segunda parte
 
 La única función que no es probada en este ejemplo es setvideomode(), que será utilizada para el segundo ejercicio de ampliación.
@@ -33,9 +33,9 @@ Para este ejercicio hay que implementar una función para dibujar un recuadro en
 
 La función main pide al usuario la posición de las esquinas del recuadro y los colores deseados, para después realizar una llamada a esta función y dibujar dicho recuadro. Este funcionamiento lo podemos observar en las siguientes imagenes:
 
-![Ej2-1](https://i.postimg.cc/ZBJK0vrS/Ej2-1.png)
+![Ej2-1](https://i.postimg.cc/50CH7wy6/Ej2-1.png)
 ###### Parametros para dibujar el recuadro
-![Ej2-2](https://i.postimg.cc/0MZ5S5fJ/Ej2-2.png)
+![Ej2-2](https://i.postimg.cc/kGP2kBRw/Ej2-2.png)
 ###### Recuadro dibujado
 
 ## 4.- Segundo requisito ampliado (amp2.c)
@@ -46,7 +46,7 @@ Respecto a la función main de este ejercicio no hay mucho que explicar, ya que 
 
 En nuestro caso hemos dibujado una casa en color azul, como podemos observar en la siguiente imagen:
 
-![Ej3](https://i.postimg.cc/N2MskhJC/Ej3.png) 
+![Ej3](https://i.postimg.cc/qqcN048r/Ej3.png) 
 ###### Casa dibujada mediante pixeles
 
 Cabe destacar que esta manera de "dibujar" no es demasiado útil, ya que para algo tan simple como una casa se tarda bastante tiempo buscando donde colocar los distintos pixeles para darle su apariencia, aunque el resultado sea aceptable.
