@@ -1,0 +1,52 @@
+# Práctica 1.- Entrada/Salida utilizando interrupciones con lenguaje C
+### Hecho por: Pablo García López
+
+## 1.- Introducción
+La memoria de esta práctica la vamos a dividir en 3 partes (cada una se corresponde con un archivo entregado):
+- Primera parte: Requisitos mínimos -> En esta parte vamos a hablar sobre las 9 funciones requeridas a implementar, de su funcionamiento y del pequeño programa que hace uso de estas funciones para comprobar su correcto funcionamiento.
+- Segunda parte: Primer requisito ampliado -> En esta parte vamos a hablar de que funciones utilizamos para poder dibujar el recuadro por pantalla y de como hacemos para que esto funcione.
+- Tercera parte: Segundo requisito ampliado -> En esta parte vamos a hablar de como se ha creado el dibujo que se muestra por pantalla.
+
+## 2.- Requisitos mínimos (ejer.c)
+En esta sección vamos a hablar de las distintas funciones implementadas como parte de nuestra "biblioteca". Estas son:
+- 2.1.- void gotoxy(int x, int y): Desplaza el cursor hasta la posición (x,y) de la pantalla. Los enteros x e y representan las coordenadas en las que nos queremos posicionar, respecto al tamaño que tiene la pantalla. Por ejemplo, si lanzamos el programa podemos cambiar el cursor desde (0,0) (esquina superior izquierda) hasta (24,79) (esquina inferior derecha).
+- 2.2.- void setcursortype(int tipo_cursor): Cambia la apariencia del cursor según el parámetro tipo_cursor. Este puede ser 0 (cursor invisible), 1 (cursor normal) o 2 (cursor grueso).
+- 2.3.- void setvideomode(BYTE modo): En primer lugar, debemos de incluir una macro (#define BYTE unsigned char) para "tener" el tipo de dato BYTE, que es un unsigned char. Esta función recibe un parámetro de este tipo que representa el modo de video a fijar, dentro de los disponibles (por ejemplo, el 3 es modo texto 80x25 o el 4 es modo gráfico 320x200).
+- 2.4.- BYTE getvideomode(): Esta función se utiliza para obtener el modo de video que tenemos fijado, que será devuelto como salida de la función (es de tipo BYTE).
+- 2.5.- void textcolor(int color) y void textbackground(int color): Estas dos funciones las vamos a describir conjuntamente, puesto que su comportamiento en similar. En primer lugar, tenemos dos variables globales (COLOR_TEXTO y COLOR_FONDO, inicializadas a 15 y 0 respectivamente) para representar el color actual que tenemos fijado para el texto y para el fondo. Ambas funciones lo que hacen es modificar el valor de estas variables para cambiar el color fijado para texto o fondo.
+- 2.6.- void clrscr(): Esta función se utiliza para borrar toda la pantalla. Se basa en la interrupción 10h, función 6 que realmente sirve para realizar un scroll vertical de pantalla. Esta función recibe los parámetros en los registros ch, cl, dh, dl (estos cuatro para representar con coordenadas la zona a la que realizar el scroll), bh (para el color de los espacios) y al (para el número de líneas a desplazar). Si los configuramos correctamente (los registros que representan la posición los fijamos al tamaño de la pantalla (0,0)-(24,79), el color lo fijamos al color seleccionado actualmente en el programa y el registro al lo fijamos a 0), en lugar de realizar scroll vertical, se borrará toda la pantalla.
+- 2.7.- void cputchar(char letra): Esta función recibe como parámetro el caracter a imprimir por pantalla, que será imprimido con los colores seleccionados en el programa en el momento de su llamada en la posición en la que se encuentre el cursor en dicho momento. 
+- 2.8.- void getche(): Esta función obtiene un caracter que pulsemos en el teclado y lo muestra por pantalla. En primer lugar, lee el caracter de teclado con la interrupción 16 función 0 y dicho caracter lo pasa a una llamada a la función cputchar(), que lo imprime por pantalla.
+
+Para finalizar esta sección, vamos a comentar lo que realiza la función main de este archivo, utilizada para probar el correcto funcionamiento de las funciones descritas anteriormente. En primer lugar, obtiene el modo de video inicial y lo muestra, cambia a cursor invisible y escribe una 'A' en la posición actual. A continuación cambia a cursor grueso, cambia el color de texto y de fondo y pasa a esperar a que el usuario pulse una tecla para mostrarla por pantalla con dichos colores. El programa cambia a cursor normal, vuelve a poner los colores de texto y fondo iniciales y borra toda la pantalla, para finalmente desplazarse a la posición (15,30) y escribir una 'P' en dicha posición. Este funcionamiento lo podemos ver en las siguientes imagenes:
+
+![Ej1-1](https://i.postimg.cc/5HdtdRyj/Ej1-1.png)
+###### Primera parte 
+![Ej1-2](https://i.postimg.cc/HJwkp98z/Ej1-2.png)
+###### Segunda parte
+
+La única función que no es probada en este ejemplo es setvideomode(), que será utilizada para el segundo ejercicio de ampliación.
+
+## 3.- Primer requisito ampliado (amp1.c)
+Para este ejercicio hay que implementar una función para dibujar un recuadro en modo texto, tomando como valores las coordenadas de la esquina superior izquierda y de la esquina inferior derecha, el color del caracter que delimitará el recuadro (en nuestro caso '*') y el color del fondo. Para esto se utilizan las funciones 2.1, 2.5, 2.6, 2.7, 2.8. La función implementada es:
+- void recuadro(int xSup, int ySup, int xInf, int yInf, int colorT, int colorF): En primer lugar, cambia el color de texto y fondo con las funciones auxiliares y borra la pantalla para, a continuación, utilizar 4 bucles for para dibujar cada uno de los lados del recuadro, utilizando para ello los valores de las coordenadas pasadas como parámetros.
+
+La función main pide al usuario la posición de las esquinas del recuadro y los colores deseados, para después realizar una llamada a esta función y dibujar dicho recuadro. Este funcionamiento lo podemos observar en las siguientes imagenes:
+
+![Ej2-1](https://i.postimg.cc/ZBJK0vrS/Ej2-1.png)
+###### Parametros para dibujar el recuadro
+![Ej2-2](https://i.postimg.cc/0MZ5S5fJ/Ej2-2.png)
+###### Recuadro dibujado
+
+## 4.- Segundo requisito ampliado (amp2.c)
+El objetivo de este ejercicio es crear un programa que establezca el modo gráfico VGA para crear dibujos en pantalla. Esto se hace gracias a la función 2.3 y la siguiente función auxiliar:
+- void pixel(int x, int y, BYTE c): Pone un pixel en la posición (x,y) del color C (puede ser 0-negro, 1-azul, 2-rosa o 3-blanco).
+
+Respecto a la función main de este ejercicio no hay mucho que explicar, ya que lo que hace es en primer lugar fijar el modo gráfico (4), realizar un dibujo por medio de "activar" pixels en distintos lugares de la pantalla y hace una pausa para que el usuario pueda observar el dibujo realizado. Finalmente, antes de terminar vuelve a fijar el modo texto (3).
+
+En nuestro caso hemos dibujado una casa en color azul, como podemos observar en la siguiente imagen:
+
+![Ej3](https://i.postimg.cc/N2MskhJC/Ej3.png) 
+###### Casa dibujada mediante pixeles
+
+Cabe destacar que esta manera de "dibujar" no es demasiado útil, ya que para algo tan simple como una casa se tarda bastante tiempo buscando donde colocar los distintos pixeles para darle su apariencia, aunque el resultado sea aceptable.
