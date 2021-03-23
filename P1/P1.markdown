@@ -34,10 +34,11 @@ Para este ejercicio hay que implementar una función para dibujar un recuadro en
 
 La función main pide al usuario la posición de las esquinas del recuadro y los colores deseados, para después realizar una llamada a esta función y dibujar dicho recuadro. Este funcionamiento lo podemos observar en las siguientes imagenes:
 
-![Ej2-1](https://i.postimg.cc/50CH7wy6/Ej2-1.png)
 ###### Parametros para dibujar el recuadro
-![Ej2-2](https://i.postimg.cc/kGP2kBRw/Ej2-2.png)
+![Ej2-1](https://i.postimg.cc/50CH7wy6/Ej2-1.png)
 ###### Recuadro dibujado
+![Ej2-2](https://i.postimg.cc/kGP2kBRw/Ej2-2.png)
+
 
 ## 4.- Segundo requisito ampliado (amp2.c)
 El objetivo de este ejercicio es crear un programa que establezca el modo gráfico VGA para crear dibujos en pantalla. Esto se hace gracias a la función 2.3 y la siguiente función auxiliar:
@@ -47,7 +48,7 @@ Respecto a la función main de este ejercicio no hay mucho que explicar, ya que 
 
 En nuestro caso hemos dibujado una casa en color azul, como podemos observar en la siguiente imagen:
 
-![Ej3](https://i.postimg.cc/qqcN048r/Ej3.png) 
 ###### Casa dibujada mediante pixeles
+![Ej3](https://i.postimg.cc/qqcN048r/Ej3.png) 
 
 Cabe destacar que esta manera de "dibujar" no es demasiado útil, ya que para algo tan simple como una casa se tarda bastante tiempo buscando donde colocar los distintos pixeles para darle su apariencia, aunque el resultado sea aceptable.
