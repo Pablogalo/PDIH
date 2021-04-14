@@ -25,7 +25,7 @@ Para esta parte vamos a ir comentando las distintas modificaciones añadidas al 
 ![Codigo-faux.png](https://i.postimg.cc/d3xVQznS/Codigo-faux.png)
 
 El programa inicia un bucle infinito (cuando se inicia el juego) en el que realiza lo siguiente:
-- Dibuja la "pelota" (en la posición (x,y) que corresponda), dibuja la barra de ambos jugadores con la función auxiliar y dibuja un marcador mediante la función mvprintw(). A continuación, llama a la función refresh() y usleep() para actualizar la pantalla y realizar una pausa. Finalmente, calcula las siguientes coordenadas (x,y) que le corresponden a la pelota, para así ir comprobando los distintos eventos que pueden afectar al movimiento de la pelota. El código asociado a esta parte lo podemos observar en la siguiente imagen:
+- Dibuja la "pelota" (en la posición (x,y) que corresponda), dibuja la barra de ambos jugadores con la función auxiliar y dibuja un marcador mediante llamadas a la función mvprintw(). A continuación, llama a la función refresh() y usleep() para actualizar la pantalla y realizar una pausa. Finalmente, calcula las siguientes coordenadas (x,y) que le corresponden a la pelota, para así ir comprobando los distintos eventos que pueden afectar al movimiento de la pelota. El código asociado a esta parte lo podemos observar en la siguiente imagen:
 
 ![Codigo-dibujar.png](https://i.postimg.cc/jj0C7YTp/Codigo-dibujar.png)
 
