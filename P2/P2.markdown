@@ -46,3 +46,16 @@ El programa inicia un bucle infinito (cuando se inicia el juego) en el que reali
 - Para comprobar si ha habido algún gol, se comprueba si la próxima coordenada x a la que irá la pelota es superior al valor del margen derecho (max_x) o inferior al valor del margen izquierdo (0), en cuyo caso se muestra un mensaje por pantalla "Gol del jugador", se aumenta el contador de goles de dicho jugador y se devuelve la pelota al centro del campo, invirtiendo la dirección en x que llevara anteriormente. En caso contrario, se aumenta la coordenada x de la pelota (que se usará para dibujarla en la siguiente iteración) en la dirección en la que se estuviera moviendo. Esto lo podemos observar en la siguiente imagen:
 
 ![Codigo-gol.png](https://i.postimg.cc/JhN03Y4G/Codigo-gol.png)
+
+El funcionamiento del código comentado lo podemos ver en las siguientes imágenes:
+
+![Instrucciones.png](https://i.postimg.cc/BvT58CrC/Instrucciones.png)
+###### Instrucciones del juego
+![Juego-1.png](https://i.postimg.cc/7h6SWrfB/Juego-1.png)
+###### Juego en marcha 1
+![Juego-2.png](https://i.postimg.cc/k4wxsgX6/Juego-2.png)
+###### Juego en marcha 2
+![Gol-1.png](https://i.postimg.cc/3w5CJqcR/Gol-1.png)
+###### Gol de la máquina 
+![Gol-2.png](https://i.postimg.cc/QtjQcTsZ/Gol-2.png)
+###### Marcador actualizado
