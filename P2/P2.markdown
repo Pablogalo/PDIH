@@ -52,11 +52,14 @@ El funcionamiento del código comentado lo podemos ver en las siguientes imágen
 ###### Instrucciones del juego
 ![Instrucciones.png](https://i.postimg.cc/BvT58CrC/Instrucciones.png)
 
-![Juego-1.png](https://i.postimg.cc/7h6SWrfB/Juego-1.png)
 ###### Juego en marcha 1
-![Juego-2.png](https://i.postimg.cc/k4wxsgX6/Juego-2.png)
+![Juego-1.png](https://i.postimg.cc/7h6SWrfB/Juego-1.png)
+
 ###### Juego en marcha 2
-![Gol-1.png](https://i.postimg.cc/3w5CJqcR/Gol-1.png)
+![Juego-2.png](https://i.postimg.cc/k4wxsgX6/Juego-2.png)
+
 ###### Gol de la máquina 
-![Gol-2.png](https://i.postimg.cc/QtjQcTsZ/Gol-2.png)
+![Gol-1.png](https://i.postimg.cc/3w5CJqcR/Gol-1.png)
+
 ###### Marcador actualizado
+![Gol-2.png](https://i.postimg.cc/QtjQcTsZ/Gol-2.png)
