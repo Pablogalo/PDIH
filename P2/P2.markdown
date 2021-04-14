@@ -1,0 +1,48 @@
+# Práctica 2.- Uso de ncurses para crear interfaces de usuario en modo texto bajo Linux
+### Hecho por: Pablo García López
+
+## 1.- Introducción
+La memoria de esta práctica la vamos a dividir en 2 partes:
+- Primera parte: Instalación de la librería ncurses en Linux.
+- Segunda parte: Creación de un juego "pong" sencillo.
+
+## 2.- Instalación de ncurses
+La instalación de las librerías necesarias para la realización de esta práctica es muy sencilla, ya que solo debemos introducir el comando "sudo apt-get install libncurses5-dev libncursesw5-dev" en un terminal y la instalación se realiza de manera automática. En mi caso no me ha surgido ningún problema y todo se ha instalado correctamente.
+
+## 3.- Creación del "pong"
+En este apartado vamos a tratar el contenido de la práctica en si. Partimos del código pelotita.c y hemos ido añadiendo modificaciones para al final lograr el objetivo de tener un juego similar al famoso pong, de una manera relativamente sencilla. Por este motivo, vamos a ir describiendo las distintas partes añadidas al código e ir explicando su funcionamiento parte por parte, dividiéndolo a su vez en dos partes: mostrar las instrucciones del juego y el juego como tal.
+
+### 3.1.- Mostrar instrucciones por pantalla
+Para lograr esto, en el main del archivo pong.c en primer lugar creamos una pantalla con la función newwin() de la librería, establecer el color de fondo con wbkgd y dibujar los marcos de la ventana con los caracteres '|' y '-' con la función box(). Posteriormente, añadimos los distintos mensajes con los controles a la ventana recién creada con la función mvwprintw(). Finalmente, debemos de llamar a la función wrefresh() para que los cambios se puedan observar en la pantalla y a la función usleep() para que se pueda observar la pantalla durante el tiempo que le indiquemos, antes de que pase a la siguiente parte del código. El código de este apartado lo podemos ver en la siguiente imagen:
+
+![Codigo-instrucciones.png](https://i.postimg.cc/3R9wVyGh/Codigo-instrucciones.png)
+
+### 3.2.- Funcionamiento del juego
+Para esta parte vamos a ir comentando las distintas modificaciones añadidas al código pelotita.c para crear una versión simple del juego pong. Estas son:
+
+- Función auxiliar: Se ha implementado la función draw_bar(int player, int y) para dibujar las barras que representan a los jugadores. Esta toma como parámetros el número de jugador (0 para jugador humano, ordenador en otro caso) y la coordenada "y" en la que dibujar la barra (ya que la x no cambia, en nuestro ejemplo para el jugador la x siempre es 2 y para la máquina 8). Con estos valores, utiliza la función mvprintw() de la librería para dibujar un carácter '|' en la posición "y" y en las 2 posiciones inferiores y superiores (y-1, y-2, y+1, y+2), creando así una barra que representa a un jugador de 5 caracteres de longitud. El código de esta función lo podemos observar en la siguiente imagen: 
+
+![Codigo-faux.png](https://i.postimg.cc/d3xVQznS/Codigo-faux.png)
+
+El programa inicia un bucle infinito (cuando se inicia el juego) en el que realiza lo siguiente:
+- Dibuja la "pelota" (en la posición (x,y) que corresponda), dibuja la barra de ambos jugadores con la función auxiliar y dibuja un marcador mediante la función mvprintw(). A continuación, llama a la función refresh() y usleep() para actualizar la pantalla y realizar una pausa. Finalmente, calcula las siguientes coordenadas (x,y) que le corresponden a la pelota, para así ir comprobando los distintos eventos que pueden afectar al movimiento de la pelota. El código asociado a esta parte lo podemos observar en la siguiente imagen:
+
+![Codigo-dibujar.png](https://i.postimg.cc/jj0C7YTp/Codigo-dibujar.png)
+
+- El programa comprueba si, en el próximo movimiento, la pelota va a colisionar con los límites inferior o superior de la pantalla. Comprueba si la próxima coordenada y es mayor que el valor del margen inferior (max_y) o menor que el valor del margen superior (0), en cuyo caso invierte la dirección del desplazamiento de la pelota en el eje y. En caso contrario, modifica el valor de la coordenada y (que será usado para pintar la pelota en la siguiente iteración) según sea la dirección que tiene la pelota en ese momento. El código de este apartado es el siguiente:
+
+![Codigo-rebote-sup.png](https://i.postimg.cc/DZ7ZxQ85/Codigo-rebote-sup.png)
+
+- El programa comprueba si, en el próximo movimiento, la pelota va a colisionar con algún jugador. Como la coordenada x del jugador siempre la sabemos, simplemente se comprueba si la pelota también está en dicha posición. Si esto es así y el valor absoluto de la resta de la posición en y del jugador menos la coordenada y del siguiente movimiento es menor a 3 (con esto conseguimos comprobar si la pelota está en alguna de las 5 coordenadas y que ocupa el jugador) se invierte la dirección en x de la pelota, emulando así su rebote con el jugador (hemos descrito la colisión con el jugador humano, con la máquina es análogo). Esto lo podemos ver en la siguiente imagen:
+
+![Codigo-rebote-jug.png](https://i.postimg.cc/T1wP6RjD/Codigo-rebote-jug.png)
+
+- A continuación, el programa comprueba si el jugador realiza algún movimiento. Para ello, llama a la función getch() para recoger la pulsación de una tecla y si esta es igual a "w" y el jugador se puede desplazar hacia arriba sin salirse de la pantalla, decrementa el valor de la posición en y del jugador en 1, desplazando así la barra del jugador hacia arriba una posición (hemos descrito el movimiento de la barra hacia arriba, el movimiento hacia abajo tiene la misma implementación). El código asociado a esto lo podemos observar en la siguiente imagen:
+
+![Codigo-movimiento.png](https://i.postimg.cc/5970mC1q/Codigo-movimiento.png)
+
+- Por simplicidad, el movimiento de la máquina lo realizamos igualando la posición en y de su barra con la siguiente coordenada y a la que irá la bola. Esto hace que, al menos en las pruebas que hemos realizado, sea imposible marcar un gol a la máquina. 
+
+- Para comprobar si ha habido algún gol, se comprueba si la próxima coordenada x a la que irá la pelota es superior al valor del margen derecho (max_x) o inferior al valor del margen izquierdo (0), en cuyo caso se muestra un mensaje por pantalla "Gol del jugador", se aumenta el contador de goles de dicho jugador y se devuelve la pelota al centro del campo, invirtiendo la dirección en x que llevara anteriormente. En caso contrario, se aumenta la coordenada x de la pelota (que se usará para dibujarla en la siguiente iteración) en la dirección en la que se estuviera moviendo. Esto lo podemos observar en la siguiente imagen:
+
+![Codigo-gol.png](https://i.postimg.cc/JhN03Y4G/Codigo-gol.png)
