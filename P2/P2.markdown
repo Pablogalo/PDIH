@@ -20,7 +20,7 @@ Para lograr esto, en el main del archivo pong.c en primer lugar creamos una pant
 ### 3.2.- Funcionamiento del juego
 Para esta parte vamos a ir comentando las distintas modificaciones añadidas al código pelotita.c para crear una versión simple del juego pong. Estas son:
 
-- Función auxiliar: Se ha implementado la función draw_bar(int player, int y) para dibujar las barras que representan a los jugadores. Esta toma como parámetros el número de jugador (0 para jugador humano, ordenador en otro caso) y la coordenada "y" en la que dibujar la barra (ya que la x no cambia, en nuestro ejemplo para el jugador la x siempre es 2 y para la máquina 8). Con estos valores, utiliza la función mvprintw() de la librería para dibujar un carácter '|' en la posición "y" y en las 2 posiciones inferiores y superiores (y-1, y-2, y+1, y+2), creando así una barra que representa a un jugador de 5 caracteres de longitud. El código de esta función lo podemos observar en la siguiente imagen: 
+- Función auxiliar: Se ha implementado la función draw_bar(int player, int y) para dibujar las barras que representan a los jugadores. Esta toma como parámetros el número de jugador (0 para jugador humano, ordenador en otro caso) y la coordenada "y" en la que dibujar la barra (ya que la x no cambia, en nuestro ejemplo para el jugador la x siempre es 2 y para la máquina 78). Con estos valores, utiliza la función mvprintw() de la librería para dibujar un carácter '|' en la posición "y" y en las 2 posiciones inferiores y superiores (y-1, y-2, y+1, y+2), creando así una barra que representa a un jugador de 5 caracteres de longitud. El código de esta función lo podemos observar en la siguiente imagen: 
 
 ![Codigo-faux.png](https://i.postimg.cc/d3xVQznS/Codigo-faux.png)
 
