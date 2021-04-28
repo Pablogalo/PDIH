@@ -113,7 +113,7 @@ Esta segunda versión la podemos observar en el siguiente vídeo:
 
 https://user-images.githubusercontent.com/56371721/116448586-91680080-a859-11eb-9a3f-6923eea3b665.mp4
 
-En mi opinión, al tener más LEDs e ir encendiéndolos de la manera descrita anteriormente provoca que las luces sean más similares a las de "El coche fantástico" y por lo tanto es un resultado más satisfactorio.
+En mi opinión, al tener más LEDs e ir encendiéndolos de la manera descrita anteriormente provoca que las luces sean más similares a las de "El coche fantástico" y por lo tanto dé un resultado más satisfactorio.
 
 ### 3.4.- Alarma por detección de presencia
 Para este ejercicio se ha simulado un pequeño circuito con un sensor de movimiento que enciende un LED rojo si detecta alguna presencia en su rango. Para su realización necesitamos:
