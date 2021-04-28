@@ -24,13 +24,13 @@ https://user-images.githubusercontent.com/56371721/116448188-1e5e8a00-a859-11eb-
 
 ### 2.2.- Ejercicio 2
 Este ejercicio consiste en crear un programa que encienda un LED cuando se pulse un botón. Los materiales necesarios para su realización son:
-    - Un LED.
-    - Un pulsador.
-    - 2 resistencias, una de 220 ohmios y otra de 10 kiloohmios.
+- Un LED.
+- Un pulsador.
+- 2 resistencias, una de 220 ohmios y otra de 10 kiloohmios.
 
 El montaje del circuito lo vamos a dividir en dos partes:
-    - Por una parte, debemos conectar el ánodo del LED a la salida digital 13 de la placa y el cátodo a la resistencia de 220 ohmios, la cual la conectamos a su vez a tierra.
-    - Respecto al botón, debemos conectar 2 de sus patillas contiguas una a 5V y otra a la resistencia de 10 kiloohmios, conectando esta a tierra. La patilla del lado opuesto del pulsador a la que está conectada la resistencia la conectamos a una salida digital de Arduino (en nuestro caso a la 7).
+- Por una parte, debemos conectar el ánodo del LED a la salida digital 13 de la placa y el cátodo a la resistencia de 220 ohmios, la cual la conectamos a su vez a tierra.
+- Respecto al botón, debemos conectar 2 de sus patillas contiguas una a 5V y otra a la resistencia de 10 kiloohmios, conectando esta a tierra. La patilla del lado opuesto del pulsador a la que está conectada la resistencia la conectamos a una salida digital de Arduino (en nuestro caso a la 7).
 El circuito completo lo podemos observar en la siguiente imagen:
 
 ![Circuito Ej2-S](https://user-images.githubusercontent.com/56371721/116448264-31715a00-a859-11eb-9550-1218c9a0f99b.png)
@@ -59,13 +59,13 @@ https://user-images.githubusercontent.com/56371721/116448389-5c5bae00-a859-11eb-
 
 ### 3.2.- Ejercicio 2
 Para este ejercicio hay que crear un programa en el que haya 3 LEDs, uno rojo, otro amarillo y otro verde y un botón que, al pulsarlo, encienda el LED rojo y apague los LEDs amarillo y verde. Por tanto, los materiales necesarios para este circuito son:
-    - 3 LEDs, rojo, amarillo y verde.
-    - 3 resistencias de 220 ohmios y otra de 10 kiloohmios.
-    - Un pulsador.
+- 3 LEDs, rojo, amarillo y verde.
+- 3 resistencias de 220 ohmios y otra de 10 kiloohmios.
+- Un pulsador.
 
 El montaje de este ejercicio es similar al de otros ejercicios descritos anteriormente. La explicación la dividimos en dos partes:
-    - En una primera parte debemos crear el mismo circuito de 3 LEDs descrito en el apartado anterior. 
-    - A continuación, debemos montar también el circuito del pulsador descrito en el apartado 2.2 de esta memoria.
+- En una primera parte debemos crear el mismo circuito de 3 LEDs descrito en el apartado anterior. 
+- A continuación, debemos montar también el circuito del pulsador descrito en el apartado 2.2 de esta memoria.
 El circuito completo lo podemos observar en la siguiente imagen:
 
 ![Circuito Ej2-P](https://user-images.githubusercontent.com/56371721/116448422-641b5280-a859-11eb-86cc-1dcd01d301cb.png)
@@ -83,8 +83,8 @@ Para este ejercicio hay que recrear las luces de "El coche fantástico" con 4 LE
 
 #### 3.3.1.- Primera aproximación
 Los materiales necesarios para la primera versión de este ejercicio son:
-    - 4 LEDs de color rojo.
-    - 4 resistencias de 220 ohmios.
+- 4 LEDs de color rojo.
+- 4 resistencias de 220 ohmios.
 
 El montaje del circuito es muy sencillo, ya que es similar al del apartado 2.1 de esta memoria. Conectamos los cátodos de los LEDs a tierra y los cátodos a las resistencias, conectando estas a su vez cada una a una salida digital de la placa Arduino, como podemos observar en la siguiente imagen:
 
@@ -106,8 +106,8 @@ Se ha creado un segundo circuito para este ejercicio, similar a la primera versi
 ![Codigo coche 2](https://user-images.githubusercontent.com/56371721/116448568-8f05a680-a859-11eb-85f4-63c98653d5ba.png)
 
 Es similar al del apartado anterior, con 2 pequeñas modificaciones:
-    - Como tenemos 8 LEDs en lugar de 4, el vector ahora tiene 8 componentes.
-    - En los dos bucles de la función principal, ahora en lugar de encender un LED, encendemos el LED que toca en cada iteración y a su vez encendemos el LED de la izquierda y de la derecha, apagando al final de la iteración el LED "último" (es decir, si vamos de izquierda a derecha apagamos el LED que está situado a la izquierda de los 3 encendidos y si vamos de derecha a izquierda apagamos el LED que esté a la derecha).
+- Como tenemos 8 LEDs en lugar de 4, el vector ahora tiene 8 componentes.
+- En los dos bucles de la función principal, ahora en lugar de encender un LED, encendemos el LED que toca en cada iteración y a su vez encendemos el LED de la izquierda y de la derecha, apagando al final de la iteración el LED "último" (es decir, si vamos de izquierda a derecha apagamos el LED que está situado a la izquierda de los 3 encendidos y si vamos de derecha a izquierda apagamos el LED que esté a la derecha).
 
 Esta segunda versión la podemos observar en el siguiente vídeo:
 
@@ -117,9 +117,9 @@ En mi opinión, al tener más LEDs e ir encendiéndolos de la manera descrita an
 
 ### 3.4.- Alarma por detección de presencia
 Para este ejercicio se ha simulado un pequeño circuito con un sensor de movimiento que enciende un LED rojo si detecta alguna presencia en su rango. Para su realización necesitamos:
-    - Un LED rojo.
-    - Una resistencia de 220 ohmios.
-    - Un sensor PIR.
+- Un LED rojo.
+- Una resistencia de 220 ohmios.
+- Un sensor PIR.
 
 Para el montaje del circuito debemos realizar el mismo montaje del LED descrito en el apartado 2.1 y respecto al sensor, debemos conectar su patilla de tierra a un pin de tierra de Arduino, su patilla de potencia a 5 voltios y su patilla de señal a una salida digital de Arduino, como podemos ver en la siguiente imagen:
 
