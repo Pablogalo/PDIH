@@ -131,4 +131,4 @@ Su código asociado es:
 
 En primer lugar, declaramos la variable PIR de tipo int para recoger el valor que está detectando el sensor. En la función de inicialización declaramos el pin del LED como salida y el pin del sensor como entrada. En la función principal leemos el valor que está tomando el sensor y si este es HIGH (es decir, está detectando algo dentro de su rango) encendemos y apagamos el LED, simulando así que salta la alarma. Este funcionamiento lo podemos observar en el siguiente vídeo:
 
-Uploading Alarma.mp4…
+https://user-images.githubusercontent.com/56371721/116448783-c83e1680-a859-11eb-98a3-6a13630a76d1.mp4
