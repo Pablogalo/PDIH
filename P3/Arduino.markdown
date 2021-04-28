@@ -86,7 +86,7 @@ Los materiales necesarios para la primera versión de este ejercicio son:
 - 4 LEDs de color rojo.
 - 4 resistencias de 220 ohmios.
 
-El montaje del circuito es muy sencillo, ya que es similar al del apartado 2.1 de esta memoria. Conectamos los cátodos de los LEDs a tierra y los cátodos a las resistencias, conectando estas a su vez cada una a una salida digital de la placa Arduino, como podemos observar en la siguiente imagen:
+El montaje del circuito es muy sencillo, ya que es similar al del apartado 2.1 de esta memoria. Conectamos los cátodos de los LEDs a tierra y los ánodos a las resistencias, conectando estas a su vez cada una a una salida digital de la placa Arduino, como podemos observar en la siguiente imagen:
 
 ![Circuito coche 1](https://user-images.githubusercontent.com/56371721/116448478-772e2280-a859-11eb-8345-dda910ce29c4.png)
 
