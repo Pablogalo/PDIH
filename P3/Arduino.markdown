@@ -7,8 +7,8 @@ Para esta práctica se ha trabajado con TinkerCad, un simulador del hardware Ard
 ## 2.- Seminario
 ### 2.1.- Ejercicio 1
 En este ejercicio, se pide implementar un programa que encienda y apague alternativamente dos LEDs con un intervalo de 1,5 segundos. Los materiales necesarios son:
-    - 2 LEDs, uno rojo y otro verde.
-    - 2 resistencias de 220 ohmios.
+- 2 LEDs, uno rojo y otro verde.
+- 2 resistencias de 220 ohmios.
 
 Para el montaje del circuito debemos conectar el cátodo de cada uno de los LEDs a tierra y el ánodo a una de las resistencias, conectando a su vez el otro terminal de la resistencia a una salida digital de la placa Arduino (en nuestro caso 12 y 13). El montaje lo podemos observar en la siguiente imagen:
 
