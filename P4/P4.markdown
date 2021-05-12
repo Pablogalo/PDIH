@@ -9,7 +9,7 @@ En esta práctica hemos trabajado con PostScript, el lenguaje de descripción de
 
 ## 2.- Funciones PostScript utilizadas.
 Antes de comenzar a describir las distintas funciones utilizadas vamos a comentar algunos conceptos del lenguaje:
-- Los archivos PostScript los guardamos con extensión .ps. Para identificarlo como archivo PostScript debemos escribir al principio "%!PS-Adobe-3.0" y finalizar con "%%EOF", "%EPS grestore" o %EndPhotoshop.
+- Los archivos PostScript los guardamos con extensión .ps. Para identificarlo como archivo PostScript debemos escribir al principio "%!PS-Adobe-3.0" y finalizar con "%%EOF", "%EPS grestore" o "%EndPhotoshop".
 - Los distintos objetos que dibujamos son realmente caminos, un conjunto de elementos que componen el objeto que queremos dibujar. Por ello, cada objeto independiente lo agrupamos dentro de un camino.
 
 A continuación, vamos a comentar las distintas funciones del lenguaje que hemos utilizado para diseñar los distintos objetos entregados, agrupadas en distintas modalidades:
