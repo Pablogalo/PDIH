@@ -39,6 +39,8 @@ Se han utilizado las siguientes dos funciones de ayuda para poder realizar los d
 ## 3.- Dibujar una casa
 Para este ejercicio, se ha dibujado una casa utilizando PostScript para ello. El código asociado es el siguiente:
 
+![Casa - Codigo](https://user-images.githubusercontent.com/56371721/118055334-33263c00-b388-11eb-86e0-c71a55e37e98.jpg)
+
 Vamos a describir cada uno de los bloques que se distinguen en el texto:
 - Primer bloque, dibujar el "cuerpo" de la casa: Como se ha comentado anteriormente, en primer lugar se delimita un cuadrado y se rellena de color gris (valor 0.7 de la función setgray) y posteriormente se traza el contorno del mismo repitiendo el mismo camino, pero utilizando un color azulado (0, 0.5, 1 en rgb) para pintar una línea con la función stroke que dibuje este trazado.
 - Segundo bloque, dibujar el tejado de la casa: Se hace de manera análoga al primer bloque, solamente utilizando 3 puntos en las coordenadas que nos interesan para representar el triángulo que hará de tejado de la casa.
@@ -47,8 +49,12 @@ Vamos a describir cada uno de los bloques que se distinguen en el texto:
 
 Tras realizar todo esto y convertir el archivo PostScript a extensión pdf o jpg, podemos observar el resultado en la siguiente imagen:
 
+![Casita](https://user-images.githubusercontent.com/56371721/118055380-4802cf80-b388-11eb-83a9-00e562d4996b.png)
+
 ## 4.- Diseño de una tarjeta de visita
 Para diseñar una tarjeta de visita, se debe implementar el siguiente código:
+
+![Tarjeta - Codigo](https://user-images.githubusercontent.com/56371721/118055305-27d31080-b388-11eb-88ab-dfe807703422.jpg)
 
 Las partes son:
 - Dibujar la tarjeta: Se dibuja el camino como un rectángulo, el cual se rellena con un color cercano al blanco (0.95 en la función setgray).
@@ -57,3 +63,4 @@ Las partes son:
 
 El resultado de la tarjeta diseñada lo podemos observar en la siguiente imagen:
 
+![Tarjeta](https://user-images.githubusercontent.com/56371721/118055326-2d305b00-b388-11eb-8129-5cf38b5f2434.png)
