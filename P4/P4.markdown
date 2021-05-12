@@ -26,7 +26,7 @@ Respecto a las funciones utilizadas para modificar el tipo y tamaño de letra al
 - closepath: Finaliza el bloque en el que se delimita un camino y dibuja una línea recta que une el punto en el que estemos situados con el punto de inicio del camino.
 - lineto: Dibuja una línea recta desde el punto en el que nos encontremos hasta el punto que se le indica a la función (en sus dos parámetros) como coordenadas x e y.
 - arc: Función utilizada para dibujar circunferencias o partes de ellas. Recibe las coordenadas x e y del centro de la circunferencia, el radio y los ángulos de inicio y final a dibujar (para dibujar arcos).
-- fill: Función utilizada para rellenar de color el camino que hayamos delimitado. Para dibujar el relleno de una forma y su contorno, en primer lugar debemos definir la forma, rellenarla y posteriormente volver a dibujar su forma, con otro color para que se pueda distinguir. 
+- fill: Función utilizada para rellenar de color el camino que hayamos delimitado. Para dibujar el relleno de una forma y su contorno, en primer lugar debemos definir la forma, rellenarla y posteriormente volver a dibujar su contorno, con otro color para que se pueda distinguir. 
 - show: Se utiliza para imprimir texto. Recibe como parámetro el texto a imprimir en la página.
 - stroke: Función que realiza el dibujado del camino que hayamos definido. Hasta que esta función no es llamada realmente no se dibuja nada, por lo que para poder observar los objetos creados debemos llamarla tras definir los distintos caminos. Además, finaliza el camino que se esté definiendo, por lo que para seguir dibujando debemos crear un nuevo camino.
 - showpage: Función que sirve para especificar el fin de página, por lo que la incluimos como ultima función de los archivos.
