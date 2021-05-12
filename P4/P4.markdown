@@ -2,7 +2,7 @@
 ### Hecho por: Pablo García López
 
 ## 1.- Introducción
-En esta práctica hemos trabajado con PostScript, el lenguaje de descripción de página más extendido, siendo prácticamente un estándar de lenguaje usado para controlar impresoras, indicando qué y donde debe imprimir. En esta memoria vamos a tratar:
+En esta práctica hemos trabajado con PostScript, el lenguaje de descripción de página más extendido, siendo prácticamente un estándar de lenguaje usado para controlar impresoras, indicando qué y dónde debe imprimir. En esta memoria vamos a tratar:
 - Funciones del lenguaje utilizadas.
 - Mostrar el dibujo de una casa.
 - Diseño de una tarjeta de visita.
