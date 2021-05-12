@@ -1,0 +1,59 @@
+# Práctica 4.- El lenguaje PostScript
+### Hecho por: Pablo García López
+
+## 1.- Introducción
+En esta práctica hemos trabajado con PostScript, el lenguaje de descripción de página más extendido, siendo prácticamente un estándar de lenguaje usado para controlar impresoras, indicando qué y donde debe imprimir. En esta memoria vamos a tratar:
+- Funciones del lenguaje utilizadas.
+- Mostrar el dibujo de una casa.
+- Diseño de una tarjeta de visita.
+
+## 2.- Funciones PostScript utilizadas.
+Antes de comenzar a describir las distintas funciones utilizadas vamos a comentar algunos conceptos del lenguaje:
+- Los archivos PostScript los guardamos con extensión .ps. Para identificarlo como archivo PostScript debemos escribir al principio "%!PS-Adobe-3.0" y finalizar con "%%EOF", "%EPS grestore" o %EndPhotoshop.
+- Los distintos objetos que dibujamos son realmente caminos, un conjunto de elementos que componen el objeto que queremos dibujar. Por ello, cada objeto independiente lo agrupamos dentro de un camino.
+
+A continuación, vamos a comentar las distintas funciones del lenguaje que hemos utilizado para diseñar los distintos objetos entregados, agrupadas en distintas modalidades:
+
+### 2.1.- Funciones para modificar el color y tipo de letra
+Dentro de las funciones que incluye PostScript, para modificar el color del trazo hemos utilizado:
+- setgray: Función que sirve para modificar el tono de gris con el que vamos a dibujar. Recibe un parámetro, comprendido entre 0 y 1, indicando el tono deseado, siendo 0 color negro y 1 color blanco.
+- setrgbcolor: Función que sirve para modificar el color con el que vamos a dibujar, expresando el nuevo color en formato (r,g,b). Recibe 3 parámetros, comprendidos entre 0 y 1 que indican la cantidad de cada color (rojo, verde y azul) que forman al nuevo color.
+
+Respecto a las funciones utilizadas para modificar el tipo y tamaño de letra al imprimir una cadena de texto, hemos utilizado la función findfont para buscar un tipo de letra (también permite buscar negritas, cursivas, etc.), la función scalefont para determinar el tamaño de letra a utilizar y la función setfont, para establecer el tipo de letra que hemos elegido con las funciones anteriores.
+
+### 2.2.- Funciones para dibujar elementos
+- newpath: Inicia un bloque en el que vamos a describir un camino a dibujar.
+- closepath: Finaliza el bloque en el que se delimita un camino y dibuja una línea recta que une el punto en el que estemos situados con el punto de inicio del camino.
+- lineto: Dibuja una línea recta desde el punto en el que nos encontremos hasta el punto que se le indica a la función (en sus dos parámetros) como coordenadas x e y.
+- arc: Función utilizada para dibujar circunferencias o partes de ellas. Recibe las coordenadas x e y del centro de la circunferencia, el radio y los ángulos de inicio y final a dibujar (para dibujar arcos).
+- fill: Función utilizada para rellenar de color el camino que hayamos delimitado. Para dibujar el relleno de una forma y su contorno, en primer lugar debemos definir la forma, rellenarla y posteriormente volver a dibujar su forma, con otro color para que se pueda distinguir. 
+- show: Se utiliza para imprimir texto. Recibe como parámetro el texto a imprimir en la página.
+- stroke: Función que realiza el dibujado del camino que hayamos definido. Hasta que esta función no es llamada realmente no se dibuja nada, por lo que para poder observar los objetos creados debemos llamarla tras definir los distintos caminos. Además, finaliza el camino que se esté definiendo, por lo que para seguir dibujando debemos crear un nuevo camino.
+- showpage: Función que sirve para especificar el fin de página, por lo que la incluimos como ultima función de los archivos.
+
+### 2.3.- Funciones auxiliares
+Se han utilizado las siguientes dos funciones de ayuda para poder realizar los diseños propuestos:
+- moveto: Función que sirve para modificar el lugar en el que se va a dibujar. Recibe como parámetros las coordenadas x e y del punto en el que nos queremos situar para dibujar.
+- rotate: Función que sirve para rotar el sistema de coordenadas que se está utilizando. Recibe como parámetro los grados que queremos rotar el sistema (la rotación se produce en sentido antihorario). 
+
+## 3.- Dibujar una casa
+Para este ejercicio, se ha dibujado una casa utilizando PostScript para ello. El código asociado es el siguiente:
+
+Vamos a describir cada uno de los bloques que se distinguen en el texto:
+- Primer bloque, dibujar el "cuerpo" de la casa: Como se ha comentado anteriormente, en primer lugar se delimita un cuadrado y se rellena de color gris (valor 0.7 de la función setgray) y posteriormente se traza el contorno del mismo repitiendo el mismo camino, pero utilizando un color azulado (0, 0.5, 1 en rgb) para pintar una línea con la función stroke que dibuje este trazado.
+- Segundo bloque, dibujar el tejado de la casa: Se hace de manera análoga al primer bloque, solamente utilizando 3 puntos en las coordenadas que nos interesan para representar el triángulo que hará de tejado de la casa.
+- Tercer y cuarto bloque, dibujar la puerta y las ventanas de la casa: Se realiza de manera similar a los bloques anteriores pero sin tener que repetir dos veces el camino, ya que no hay que volver a rellenar el camino de ventanas y puerta (esto es debido a que se encuentran dentro del camino del cuerpo de la casa, que ya ha sido coloreado anteriormente).
+- Quinto bloque, texto lateral: Para imprimir el mensaje lateral ("Mi casita") fijamos el tipo de letra a Times-Roman tamaño doce y lo fijamos como tipo de letra a usar. A continuación, nos colocamos en la posición en la que queremos escribir, rotamos el sistema de coordenadas e imprimimos el mensaje con la función show, descrita anteriormente.
+
+Tras realizar todo esto y convertir el archivo PostScript a extensión pdf o jpg, podemos observar el resultado en la siguiente imagen:
+
+## 4.- Diseño de una tarjeta de visita
+Para diseñar una tarjeta de visita, se debe implementar el siguiente código:
+
+Las partes son:
+- Dibujar la tarjeta: Se dibuja el camino como un rectángulo, el cual se rellena con un color cercano al blanco (0.95 en la función setgray).
+- Circulo para la fotografía: Se dibuja una circunferencia completa con la función arc, se rellena y se le dibuja de nuevo el contorno con un color más oscuro para que se pueda apreciar.
+- Texto de la tarjeta: Las distintas partes de la tarjeta con texto se insertan de la misma manera que el quinto bloque del ejercicio anterior. La mayor complicación de esta parte del diseño es ir probando las coordenadas idóneas de inicio de cada cadena de texto para que todas ellas terminen en un punto lo más parecido entre sí, dando así un efecto que la hace más estética.
+
+El resultado de la tarjeta diseñada lo podemos observar en la siguiente imagen:
+
