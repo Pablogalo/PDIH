@@ -1,0 +1,35 @@
+# Práctica 5.- Experimentación con el sistema de salida de sonido
+### Hecho por: Pablo García López
+
+## 1.- Introducción
+En esta práctica hemos trabajado con el sistema de sonido del ordenador, por medio del entorno de programación RStudio y el lenguaje R. Dentro de RStudio hemos utilizado las librerías tuneR y seewave para poder trabajar con los distintos archivos de sonido, por lo que el primer paso para comenzar es instalar ambas bibliotecas en RStudio mediante los comandos "install.packages('tuneR', dep=TRUE)" e "install.packages('seewave', dep=TRUE)" respectivamente. 
+
+Para la realización de esta práctica, en el primer conjunto de apartados hemos trabajado con los archivos de audio "perro.wav" y "oveja.wav", habiendo upsampleado previamente este último para igualar la frecuencia de ambos sonidos y poder trabajar con ambos conjuntamente (hemos subido la frecuencia de muestreo de los 8000 Hz originales a 44100 Hz). Esto se hace mediante:
+- En primer lugar, leemos el archivo de audio a una variable con la instrucción "oveja <- readWave('oveja.wav')".
+- A continuación, modificamos su frecuencia y lo guardamos a una nueva variable con la instrucción "oveja2 <- resamp(oveja,f=8000,g=44100, output="Wave")".
+- Finalmente, guardamos esta variable a un nuevo archivo de audio con la instrucción "writeWave(oveja2, file.path("oveja.wav"))", tras lo cual en el directorio de trabajo nos aparecerá un nuevo archivo de audio de nombre "oveja.wav" con el audio modificado.
+
+Para el último apartado de la práctica hemos trabajado con el audio "hola.wav".
+
+## 2.- Realización de la práctica
+Una vez realizados los pasos previos para la realización de la práctica, comenzamos creando un nuevo script R en el que vamos a introducir los distintos comandos para conseguir la funcionalidad requerida. El script completo es el siguiente:
+
+A continuación, vamos a describir el funcionamiento de las distintas partes del archivo:
+- Líneas 1, 2 y 3: Se utilizan para iniciar las distintas librerías requeridas para el funcionamiento de la práctica.
+- Línea 5: Sentencia que cambia el directorio de trabajo de RStudio. Se debe modificar con la ruta en la que tengamos los distintos archivos de sonido utilizados ("perro.wav", "oveja.wav" y "hola.wav").
+- Líneas 7 y 8: Utilizadas para guardar en una variable el resultado de leer los dos primeros archivos de sonido. Los sonidos originales son:
+
+- Líneas 10 y 11: Utilizadas para dibujar la forma de onda de ambos sonidos. El resultado es el siguiente:
+
+- Líneas 13 y 14: Se utilizan para obtener la información de las cabeceras de los audios. Dichas cabeceras son las siguientes:
+
+- Líneas 16 y 17: Sirven para unir ambos sonidos en uno solo y reproducir el resultado. El audio resultante es el siguiente:
+
+- Línea 18: Sirve para dibujar la forma de onda del audio creado en las líneas 16 y 17. La forma de onda resulta de la siguiente manera:
+
+- Líneas 20, 21, 22 y 23: Se utilizan para aplicar un filtro de frecuencia al audio anterior, eliminando las frecuencias comprendidas entre 10000 Hz y 20000 Hz. A continuación, reproduce el audio resultante y finalmente lo almacena en el archivo "mezcla.wav". El resultado de este proceso es el siguiente archivo de audio:
+
+- Líneas 26 y 27: Sentencias análogas a las de las líneas 7 y 8, pero que leen el archivo "hola.wav". A continuación, reproducen dicho sonido.
+- Líneas 29, 30 y 31: Se utilizan para aplicar el efecto de eco al audio original, escalar (con factor 10000) el valor de los puntos de muestreo del canal "izquierdo" del audio y reproducir el resultado, que lo podemos escuchar a continuación:
+
+- Líneas 33, 34 y 35: Sirven para darle la vuelta al sonido anterior, reproducirlo y guardarlo en el archivo "alreves.wav", que podemos escuchar a continuación:
