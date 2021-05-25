@@ -20,7 +20,10 @@ A continuación, vamos a describir el funcionamiento de las distintas partes del
 - Líneas 1, 2 y 3: Se utilizan para iniciar las distintas librerías requeridas para el funcionamiento de la práctica.
 - Línea 5: Sentencia que cambia el directorio de trabajo de RStudio. Se debe modificar con la ruta en la que tengamos los distintos archivos de sonido utilizados ("perro.wav", "oveja.wav" y "hola.wav").
 - Líneas 7 y 8: Utilizadas para guardar en una variable el resultado de leer los dos primeros archivos de sonido. Los sonidos originales son:
-https://user-images.githubusercontent.com/56371721/119559669-47fcc980-bda3-11eb-88e4-2df4ac43c96e.mp4
+
+https://user-images.githubusercontent.com/56371721/119560792-aaa29500-bda4-11eb-8721-b7d796b0197a.mp4
+
+
 
 https://user-images.githubusercontent.com/56371721/119559607-31ef0900-bda3-11eb-840b-c5f0250c5c1d.mp4
 
