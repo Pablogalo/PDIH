@@ -15,24 +15,35 @@ Para el último apartado de la práctica hemos trabajado con el audio "hola.wav"
 Una vez realizados los pasos previos para la realización de la práctica, comenzamos creando un nuevo script R en el que vamos a introducir los distintos comandos para conseguir la funcionalidad requerida. El script completo es el siguiente:
 
 ![Script](https://user-images.githubusercontent.com/56371721/119559142-9362a800-bda2-11eb-8fbc-b9b302fa4e81.png)
+
 A continuación, vamos a describir el funcionamiento de las distintas partes del archivo:
 - Líneas 1, 2 y 3: Se utilizan para iniciar las distintas librerías requeridas para el funcionamiento de la práctica.
 - Línea 5: Sentencia que cambia el directorio de trabajo de RStudio. Se debe modificar con la ruta en la que tengamos los distintos archivos de sonido utilizados ("perro.wav", "oveja.wav" y "hola.wav").
 - Líneas 7 y 8: Utilizadas para guardar en una variable el resultado de leer los dos primeros archivos de sonido. Los sonidos originales son:
-https://user-images.githubusercontent.com/56371721/119559601-2ef41880-bda3-11eb-9b52-c753d8caa25a.mp4
+https://user-images.githubusercontent.com/56371721/119559669-47fcc980-bda3-11eb-88e4-2df4ac43c96e.mp4
 
 https://user-images.githubusercontent.com/56371721/119559607-31ef0900-bda3-11eb-840b-c5f0250c5c1d.mp4
+
 - Líneas 10 y 11: Utilizadas para dibujar la forma de onda de ambos sonidos. El resultado es el siguiente:
+![Onda perro](https://user-images.githubusercontent.com/56371721/119560111-d2452d80-bda3-11eb-8670-1b91462cc40f.png)
+
+![Onda oveja](https://user-images.githubusercontent.com/56371721/119560122-d40ef100-bda3-11eb-98c4-d529a4f7b4dc.png)
 
 - Líneas 13 y 14: Se utilizan para obtener la información de las cabeceras de los audios. Dichas cabeceras son las siguientes:
+![Cabeceras](https://user-images.githubusercontent.com/56371721/119560171-e12be000-bda3-11eb-829a-93e079025d73.png)
 
 - Líneas 16 y 17: Sirven para unir ambos sonidos en uno solo y reproducir el resultado. El audio resultante es el siguiente:
+https://user-images.githubusercontent.com/56371721/119560301-10425180-bda4-11eb-9468-d1d6443af375.mp4
 
 - Línea 18: Sirve para dibujar la forma de onda del audio creado en las líneas 16 y 17. La forma de onda resulta de la siguiente manera:
+![Onda unido](https://user-images.githubusercontent.com/56371721/119560320-159f9c00-bda4-11eb-8ec8-c009d0944373.png)
 
 - Líneas 20, 21, 22 y 23: Se utilizan para aplicar un filtro de frecuencia al audio anterior, eliminando las frecuencias comprendidas entre 10000 Hz y 20000 Hz. A continuación, reproduce el audio resultante y finalmente lo almacena en el archivo "mezcla.wav". El resultado de este proceso es el siguiente archivo de audio:
+https://user-images.githubusercontent.com/56371721/119560583-6616f980-bda4-11eb-82b4-b198fb2b4484.mp4
 
 - Líneas 26 y 27: Sentencias análogas a las de las líneas 7 y 8, pero que leen el archivo "hola.wav". A continuación, reproducen dicho sonido.
 - Líneas 29, 30 y 31: Se utilizan para aplicar el efecto de eco al audio original, escalar (con factor 10000) el valor de los puntos de muestreo del canal "izquierdo" del audio y reproducir el resultado, que lo podemos escuchar a continuación:
+https://user-images.githubusercontent.com/56371721/119560613-6d3e0780-bda4-11eb-93a1-75addae421b1.mp4
 
 - Líneas 33, 34 y 35: Sirven para darle la vuelta al sonido anterior, reproducirlo y guardarlo en el archivo "alreves.wav", que podemos escuchar a continuación:
+https://user-images.githubusercontent.com/56371721/119560624-70d18e80-bda4-11eb-98a2-171598654582.mp4
