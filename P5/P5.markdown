@@ -14,11 +14,14 @@ Para el último apartado de la práctica hemos trabajado con el audio "hola.wav"
 ## 2.- Realización de la práctica
 Una vez realizados los pasos previos para la realización de la práctica, comenzamos creando un nuevo script R en el que vamos a introducir los distintos comandos para conseguir la funcionalidad requerida. El script completo es el siguiente:
 
+![Script](https://user-images.githubusercontent.com/56371721/119559142-9362a800-bda2-11eb-8fbc-b9b302fa4e81.png)
 A continuación, vamos a describir el funcionamiento de las distintas partes del archivo:
 - Líneas 1, 2 y 3: Se utilizan para iniciar las distintas librerías requeridas para el funcionamiento de la práctica.
 - Línea 5: Sentencia que cambia el directorio de trabajo de RStudio. Se debe modificar con la ruta en la que tengamos los distintos archivos de sonido utilizados ("perro.wav", "oveja.wav" y "hola.wav").
 - Líneas 7 y 8: Utilizadas para guardar en una variable el resultado de leer los dos primeros archivos de sonido. Los sonidos originales son:
+https://user-images.githubusercontent.com/56371721/119559601-2ef41880-bda3-11eb-9b52-c753d8caa25a.mp4
 
+https://user-images.githubusercontent.com/56371721/119559607-31ef0900-bda3-11eb-840b-c5f0250c5c1d.mp4
 - Líneas 10 y 11: Utilizadas para dibujar la forma de onda de ambos sonidos. El resultado es el siguiente:
 
 - Líneas 13 y 14: Se utilizan para obtener la información de las cabeceras de los audios. Dichas cabeceras son las siguientes:
